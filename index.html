@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Турция 2026 — Подборка отелей 5★ Ultra All Inclusive</title>
+    <title>Турция 2026 — Бюджетные отели All Inclusive + перелёт из Цюриха</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -21,7 +21,7 @@
         .hero h1 {
             font-size: 2.8rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff 0%, #80d8ff 50%, #ffab40 100%);
+            background: linear-gradient(135deg, #fff 0%, #80d8ff 50%, #69f0ae 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 12px;
@@ -43,84 +43,111 @@
         .trip-info .badge {
             background: rgba(255,255,255,0.12);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.15);
             padding: 8px 18px;
-            border-radius: 50px;
+            border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.9);
+            border: 1px solid rgba(255,255,255,0.15);
         }
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 0 20px 60px;
+        .trip-info .badge.green {
+            background: rgba(105,240,174,0.15);
+            border-color: rgba(105,240,174,0.3);
+            color: #69f0ae;
         }
+
+        /* Flight info box */
+        .flight-info {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 24px 28px;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+        .flight-info h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #80d8ff;
+        }
+        .flight-routes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .flight-route {
+            background: rgba(255,255,255,0.06);
+            border-radius: 10px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .flight-route .airline { font-weight: 600; font-size: 0.85rem; margin-bottom: 4px; }
+        .flight-route .type { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+        .flight-route .price { font-size: 1.05rem; font-weight: 700; color: #69f0ae; margin-top: 4px; }
+        .flight-note {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+        .flight-note strong { color: rgba(255,255,255,0.7); }
+
         .sort-bar {
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 10px;
-            margin: 30px 0 10px;
+            margin: 20px auto 30px;
             flex-wrap: wrap;
-        }
-        .sort-bar span {
-            color: rgba(255,255,255,0.5);
-            font-size: 0.85rem;
         }
         .sort-btn {
             background: rgba(255,255,255,0.08);
             border: 1px solid rgba(255,255,255,0.15);
-            color: rgba(255,255,255,0.8);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.85rem;
             cursor: pointer;
             transition: all 0.2s;
             font-family: inherit;
         }
         .sort-btn:hover { background: rgba(255,255,255,0.15); }
-        .sort-btn.active {
-            background: linear-gradient(135deg, #ff6d00, #ffab40);
-            border-color: transparent;
-            color: #fff;
-        }
+        .sort-btn.active { background: rgba(105,240,174,0.2); border-color: #69f0ae; color: #69f0ae; }
         .hotels-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
             gap: 24px;
-            margin-top: 24px;
         }
-        /* Clickable card */
-        a.hotel-card-link {
+        .hotel-card-link {
             text-decoration: none;
             color: inherit;
             display: block;
-            border-radius: 20px;
-            transition: all 0.35s ease;
-        }
-        a.hotel-card-link:hover .hotel-card {
-            transform: translateY(-6px);
-            border-color: rgba(255,171,64,0.4);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3), 0 0 40px rgba(255,171,64,0.1);
         }
         .hotel-card {
             background: rgba(255,255,255,0.07);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            border-radius: 18px;
             overflow: hidden;
-            transition: all 0.35s ease;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
             position: relative;
         }
-        .hotel-card .card-number {
+        .hotel-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(105,240,174,0.3);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+        .card-number {
             position: absolute;
-            top: 16px;
-            left: 16px;
-            width: 36px;
-            height: 36px;
+            top: 12px;
+            left: 12px;
             background: rgba(0,0,0,0.6);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(8px);
+            width: 32px;
+            height: 32px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -128,78 +155,77 @@
             font-weight: 700;
             font-size: 0.85rem;
             z-index: 2;
-            border: 1px solid rgba(255,255,255,0.2);
         }
-        .hotel-card .card-badge {
+        .card-badge {
             position: absolute;
-            top: 16px;
-            right: 16px;
-            background: linear-gradient(135deg, #ff6d00, #ffab40);
+            top: 12px;
+            right: 12px;
+            background: linear-gradient(135deg, #00c853, #69f0ae);
+            color: #003300;
             padding: 4px 12px;
-            border-radius: 20px;
+            border-radius: 8px;
             font-size: 0.7rem;
             font-weight: 700;
-            text-transform: uppercase;
             z-index: 2;
             letter-spacing: 0.5px;
         }
+        .card-badge.orange {
+            background: linear-gradient(135deg, #ff6d00, #ffab40);
+            color: #3e2700;
+        }
         .hotel-image {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
         .hotel-image-placeholder {
             width: 100%;
-            height: 220px;
+            height: 200px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3.5rem;
-            position: relative;
-            overflow: hidden;
         }
-        .hotel-image-placeholder::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, rgba(13,71,161,0.6) 0%, rgba(0,150,136,0.3) 100%);
+        .hotel-image-placeholder .emoji { font-size: 3rem; }
+        .card-body { padding: 18px 20px 20px; }
+        .hotel-stars {
+            font-size: 0.7rem;
+            color: #ffab40;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
         }
-        .hotel-image-placeholder .emoji { position: relative; z-index: 1; }
-        .card-body { padding: 20px 24px 24px; }
         .hotel-name {
-            font-size: 1.15rem;
+            font-size: 1.05rem;
             font-weight: 700;
             margin-bottom: 4px;
             line-height: 1.3;
-            color: #fff;
         }
         .hotel-location {
+            font-size: 0.78rem;
             color: rgba(255,255,255,0.5);
-            font-size: 0.8rem;
-            margin-bottom: 12px;
-        }
-        .hotel-stars {
-            color: #ffab40;
-            font-size: 0.75rem;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .hotel-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 6px;
-            margin-bottom: 14px;
+            margin-bottom: 10px;
         }
         .tag {
             background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
             padding: 3px 10px;
-            border-radius: 20px;
+            border-radius: 6px;
             font-size: 0.7rem;
+            border: 1px solid rgba(255,255,255,0.1);
             color: rgba(255,255,255,0.7);
         }
         .tag.highlight {
+            background: rgba(105,240,174,0.15);
+            border-color: rgba(105,240,174,0.3);
+            color: #69f0ae;
+        }
+        .tag.budget {
             background: rgba(255,171,64,0.15);
             border-color: rgba(255,171,64,0.3);
             color: #ffab40;
@@ -232,6 +258,11 @@
             font-size: 0.65rem;
             color: rgba(255,255,255,0.35);
         }
+        .hotel-price .breakdown {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 2px;
+        }
         .hotel-rating {
             display: flex;
             align-items: center;
@@ -256,77 +287,111 @@
         .click-hint {
             display: block;
             text-align: center;
-            margin-top: 12px;
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.3);
-            letter-spacing: 0.5px;
-        }
-        .disclaimer {
-            text-align: center;
-            padding: 40px 20px;
-            color: rgba(255,255,255,0.3);
+            padding: 10px;
             font-size: 0.75rem;
-            line-height: 1.8;
+            color: rgba(255,255,255,0.3);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 14px;
+            margin-left: -20px;
+            margin-right: -20px;
+            margin-bottom: -20px;
+            transition: color 0.2s;
         }
-        .disclaimer a { color: #80d8ff; }
-        @media (max-width: 768px) {
+        .hotel-card:hover .click-hint { color: #69f0ae; }
+        .footer-note {
+            text-align: center;
+            padding: 30px 20px 50px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        @media (max-width: 480px) {
             .hero h1 { font-size: 1.8rem; }
-            .hotels-grid { grid-template-columns: 1fr; }
-            .hotel-image, .hotel-image-placeholder { height: 180px; }
+            .hotels-grid { grid-template-columns: 1fr; padding: 0 12px 40px; }
+            .trip-info .badge { font-size: 0.75rem; padding: 6px 12px; }
+            .flight-info { margin: 0 12px 30px; padding: 16px 18px; }
         }
     </style>
 </head>
 <body>
 
-<div class="hero">
-    <h1>Турция 2026</h1>
-    <p class="subtitle">Подборка лучших отелей 5★ Ultra All Inclusive на первой линии</p>
-    <div class="trip-info">
-        <span class="badge">15 июля — 15 августа</span>
-        <span class="badge">8–10 ночей</span>
-        <span class="badge">2 взрослых + ребёнок 14 лет</span>
-        <span class="badge">5★ Ultra AI</span>
-        <span class="badge">1-я линия</span>
+    <div class="hero">
+        <h1>Турция 2026 — Бюджет</h1>
+        <p class="subtitle">20 отелей All Inclusive + перелёт Цюрих ✈ Анталья на троих</p>
+        <div class="trip-info">
+            <span class="badge">Июль — Август 2026</span>
+            <span class="badge">10 ночей</span>
+            <span class="badge">2 взр + 1 реб (14 лет)</span>
+            <span class="badge green">Цены с перелётом!</span>
+        </div>
     </div>
-</div>
 
-<div class="container">
+    <div class="flight-info">
+        <h3>Перелёт Цюрих (ZRH) → Анталья (AYT) — 3 человека</h3>
+        <div class="flight-routes">
+            <div class="flight-route">
+                <div class="airline">SunExpress (прямой)</div>
+                <div class="type">~3ч 15мин · включён багаж 20кг</div>
+                <div class="price">~1 000 CHF / 3 чел.</div>
+            </div>
+            <div class="flight-route">
+                <div class="airline">Pegasus (через Стамбул)</div>
+                <div class="type">~6-8ч · багаж отдельно</div>
+                <div class="price">~700 CHF / 3 чел.</div>
+            </div>
+            <div class="flight-route">
+                <div class="airline">Edelweiss (прямой)</div>
+                <div class="type">~3ч 15мин · полный сервис</div>
+                <div class="price">~1 350 CHF / 3 чел.</div>
+            </div>
+            <div class="flight-route">
+                <div class="airline">Swiss (прямой)</div>
+                <div class="type">~3ч 15мин · премиум</div>
+                <div class="price">~1 650 CHF / 3 чел.</div>
+            </div>
+        </div>
+        <p class="flight-note">
+            <strong>В ценах отелей ниже перелёт включён</strong> — из расчёта ~1 000 CHF (SunExpress, прямой рейс на троих, туда-обратно).
+            Бронируйте билеты заранее (январь-март 2026) для лучших цен. Ребёнок 14 лет — взрослый тариф.
+        </p>
+    </div>
 
     <div class="sort-bar">
-        <span>Сортировка:</span>
-        <button class="sort-btn active" onclick="sortHotels('default', this)">По регионам</button>
-        <button class="sort-btn" onclick="sortHotels('price-asc', this)">Цена ↑</button>
+        <button class="sort-btn active" onclick="sortHotels('price-asc', this)">Цена ↑</button>
         <button class="sort-btn" onclick="sortHotels('price-desc', this)">Цена ↓</button>
         <button class="sort-btn" onclick="sortHotels('rating', this)">Рейтинг ↓</button>
     </div>
 
     <div class="hotels-grid" id="hotelsGrid">
 
-        <!-- 1. Maxx Royal Belek — ~15 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/maxx-royal-belek-golf-spa.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="15500" data-rating="9.4" data-order="1">
+        <!-- 1. Lonicera Resort & Spa — 2 500 + 1 000 = 3 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/lonicera-resort-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="3500" data-hotel="2500" data-flight="1000" data-rating="8.0" data-order="1">
             <div class="hotel-card">
                 <div class="card-number">1</div>
-                <div class="card-badge">TOP 1</div>
-                <img class="hotel-image" src="https://www.maxxroyal.com/media/1hyk1dqm/maxxroyalbelekgolf.jpg" alt="Maxx Royal Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>👑</span></div>'">
+                <div class="card-badge">BEST PRICE</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/311752893.jpg" alt="Lonicera Resort & Spa" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏖️</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Maxx Royal Belek Golf Resort</h3>
-                    <div class="hotel-location">Белек, Искелемевкии</div>
+                    <h3 class="hotel-name">Lonicera Resort & Spa</h3>
+                    <div class="hotel-location">Аланья, Тюрклер</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Maxx Inclusive</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Гольф</span>
-                        <span class="tag">Виллы</span>
-                        <span class="tag">VIP трансфер</span>
+                        <span class="tag">Аквапарк</span>
+                        <span class="tag">Анимация</span>
+                        <span class="tag budget">Лучшая цена</span>
                     </div>
-                    <p class="hotel-desc">№1 в рейтинге Белека. Виллы и сьюты, вертолётные трансферы, 3 поля для гольфа, частный пляж. Всё на высшем уровне: премиальный алкоголь и рестораны a la carte.</p>
+                    <p class="hotel-desc">Отличное соотношение цена/качество. Первая линия, большая зелёная территория, аквапарк с горками, бассейны, вечерняя анимация. Всё включено на достойном уровне.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~15 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~3 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~2 500 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score gold">9.4</span>
+                            <span class="score">8.0</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -335,30 +400,30 @@
             </div>
         </a>
 
-        <!-- 2. Regnum Carya — ~12 000 CHF (Booking: 13255 CHF / 11 ночей) -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/regnum-carya-golf-amp-spa-resort.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="12000" data-rating="9.0" data-order="2">
+        <!-- 2. Amara Prestige — 2 500 + 1 000 = 3 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/amara-prestige-hotel.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="3500" data-hotel="2500" data-flight="1000" data-rating="8.1" data-order="2">
             <div class="hotel-card">
                 <div class="card-number">2</div>
-                <div class="card-badge">LUXURY</div>
-                <img class="hotel-image" src="https://www.regnumhotels.com/media/dkrhrvjl/regnumcarya_amber_lagoon_villa_6217-banner.jpg" alt="Regnum Carya" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏌️</span></div>'">
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/259289498.jpg" alt="Amara Prestige" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏔️</span></div>'">
                 <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Regnum Carya Golf & Spa Resort</h3>
-                    <div class="hotel-location">Белек, Кадрие</div>
+                    <div class="hotel-stars">★ ★ ★ ★ +</div>
+                    <h3 class="hotel-name">Amara Prestige Hotel</h3>
+                    <div class="hotel-location">Кемер, Гёйнюк</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Гольф</span>
+                        <span class="tag">Горы + море</span>
                         <span class="tag">Спа</span>
                     </div>
-                    <p class="hotel-desc">Премиальный отель с отличным соотношением цена/качество. Собственный пляж, Championship golf course, 7 ресторанов a la carte, импортный алкоголь.</p>
+                    <p class="hotel-desc">Живописное место — горы, сосны и море. Чистый галечный пляж, бассейны, спа, детский клуб. Спокойная семейная атмосфера в окружении природы Кемера.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~12 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~3 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~2 500 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score gold">9.0</span>
+                            <span class="score">8.1</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -367,29 +432,30 @@
             </div>
         </a>
 
-        <!-- 3. Rixos Premium Belek — ~10 500 CHF (Booking: 11577 CHF / 11 ночей) -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/rixos-premium-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="10500" data-rating="9.2" data-order="3">
+        <!-- 3. Sunmelia Beach Resort — 2 700 + 1 000 = 3 700 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/sunmelia-beach-resort-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="3700" data-hotel="2700" data-flight="1000" data-rating="7.9" data-order="3">
             <div class="hotel-card">
                 <div class="card-number">3</div>
-                <img class="hotel-image" src="https://www.ahstatic.com/photos/b1j5_ho_00_p_1024x768.jpg" alt="Rixos Premium Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎢</span></div>'">
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/441234768.jpg" alt="Sunmelia Beach Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>☀️</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Rixos Premium Belek</h3>
-                    <div class="hotel-location">Белек</div>
+                    <h3 class="hotel-name">Sunmelia Beach Resort & Spa</h3>
+                    <div class="hotel-location">Сиде, Кызылагач</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI 24/7</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Land of Legends</span>
-                        <span class="tag">Детский клуб Rixy</span>
+                        <span class="tag">Песчаный пляж</span>
+                        <span class="tag">Обновлён</span>
                     </div>
-                    <p class="hotel-desc">Доступ к парку Land of Legends включён! Детский клуб Rixy, 8+ ресторанов, огромная территория. Аквапарк и аттракционы — подростку 14 лет точно понравится.</p>
+                    <p class="hotel-desc">Обновлённый отель с широким песчаным пляжем. Комплекс бассейнов с горками, детский клуб, анимация. Хорошее качество еды для своего ценового сегмента.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~10 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~3 700 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~2 700 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score">9.2</span>
+                            <span class="score">7.9</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -398,62 +464,31 @@
             </div>
         </a>
 
-        <!-- 4. Cullinan Belek — ~11 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/cullinan-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="11500" data-rating="9.0" data-order="4">
+        <!-- 4. Crystal Waterworld Resort — 3 000 + 1 000 = 4 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/crystal-waterworld-resort-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4000" data-hotel="3000" data-flight="1000" data-rating="8.0" data-order="4">
             <div class="hotel-card">
                 <div class="card-number">4</div>
-                <div class="card-badge">NEW</div>
-                <img class="hotel-image" src="https://image-tc.galaxy.tf/wijpeg-8vspq3la9nfge8f8nthy2ffdt/cullinan-belek-general-13.jpg" alt="Cullinan Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>💎</span></div>'">
+                <div class="card-badge orange">WATERPARK</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/524267498.jpg" alt="Crystal Waterworld" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎢</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Cullinan Belek</h3>
-                    <div class="hotel-location">Белек</div>
+                    <h3 class="hotel-name">Crystal Waterworld Resort & Spa</h3>
+                    <div class="hotel-location">Сиде, Богазкент</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">13 бассейнов</span>
-                        <span class="tag">Аквапарк 13 горок</span>
-                        <span class="tag">НОВЫЙ</span>
+                        <span class="tag">Огромный аквапарк</span>
+                        <span class="tag">Горки</span>
                     </div>
-                    <p class="hotel-desc">Новый люкс-отель — «бриллиант Антальи». 600 номеров, 13 бассейнов, 10 ресторанов, 1 км частного пляжа. Детский клуб Upupa с аквапарком из 13 горок!</p>
+                    <p class="hotel-desc">Аквапарк — главная фишка! Множество водных горок, бассейнов и развлечений. Первая линия, широкий песчаный пляж, анимация весь день. Подросткам точно понравится.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~11 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~4 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 000 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score">9.0</span>
-                            <span class="reviews">Новый</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 5. Calista Luxury Resort — ~9 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/calista-luxury-resort.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="9500" data-rating="8.9" data-order="5">
-            <div class="hotel-card">
-                <div class="card-number">5</div>
-                <img class="hotel-image" src="https://resortcalistaluxury.hotelbelek.net/data/Photos/OriginalPhoto/16707/1670700/1670700707/calista-luxury-resort-belek-photo-1.JPEG" alt="Calista Luxury Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌿</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Calista Luxury Resort</h3>
-                    <div class="hotel-location">Белек</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Green Star</span>
-                        <span class="tag">Детский клуб</span>
-                    </div>
-                    <p class="hotel-desc">Первый «Green Star» отель Турции. Детский клуб Calhippo с разделением по возрастам, затенённый пляж, няня. Ежегодные международные награды за качество.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~9 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.9</span>
+                            <span class="score">8.0</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -462,32 +497,65 @@
             </div>
         </a>
 
-        <!-- 6. Voyage Belek — ~9 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/voyage-belek-golf-spa.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="9000" data-rating="9.0" data-order="6">
+        <!-- 5. Club Hotel Turan Prince World — 3 000 + 1 000 = 4 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/club-turan-prince-world.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4000" data-hotel="3000" data-flight="1000" data-rating="7.8" data-order="5">
             <div class="hotel-card">
-                <div class="card-number">6</div>
-                <div class="card-badge">FAMILY</div>
-                <img class="hotel-image" src="https://voyagecdn.blob.core.windows.net/mediafiles/uploads/Voyage-Belek-General-View-2637207412574962909.jpg" alt="Voyage Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎳</span></div>'">
+                <div class="card-number">5</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/304037498.jpg" alt="Club Hotel Turan Prince World" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌊</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Voyage Belek Golf & Spa</h3>
-                    <div class="hotel-location">Белек</div>
+                    <h3 class="hotel-name">Club Hotel Turan Prince World</h3>
+                    <div class="hotel-location">Сиде, Кызылагач</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Мега-аквапарк</span>
+                        <span class="tag">Огромная территория</span>
+                    </div>
+                    <p class="hotel-desc">Один из крупнейших аквапарков среди отелей Турции! Огромная территория, множество активностей для подростков. Первая линия, песчаный пляж.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~4 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 000 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">7.8</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 6. Eftalia Ocean Resort — 3 000 + 1 000 = 4 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/eftalia-ocean-resort-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4000" data-hotel="3000" data-flight="1000" data-rating="8.2" data-order="6">
+            <div class="hotel-card">
+                <div class="card-number">6</div>
+                <div class="card-badge">ULTRA AI</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/472849571.jpg" alt="Eftalia Ocean Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎬</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Eftalia Ocean Resort & Spa</h3>
+                    <div class="hotel-location">Аланья, Тюрклер</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">Ultra All Inclusive</span>
                         <span class="tag">1-я линия</span>
                         <span class="tag">Аквапарк</span>
                         <span class="tag">Боулинг</span>
-                        <span class="tag">Аркады</span>
+                        <span class="tag">Кинотеатр</span>
                     </div>
-                    <p class="hotel-desc">№2 среди семейных отелей Турции (TripAdvisor). Аквапарк, боулинг, аркадные игры — всё включено. Подростку понравится! Отличная кухня и анимация.</p>
+                    <p class="hotel-desc">Современный курорт с Ultra AI по цене обычного! Аквапарк, боулинг, кинотеатр, игровые автоматы. Отличный выбор для подростков — масса развлечений.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~9 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~4 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 000 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score">9.0</span>
-                            <span class="reviews">TripAdvisor</span>
+                            <span class="score">8.2</span>
+                            <span class="reviews">Booking</span>
                         </div>
                     </div>
                     <span class="click-hint">Открыть на Booking.com →</span>
@@ -495,30 +563,30 @@
             </div>
         </a>
 
-        <!-- 7. Titanic Mardan Palace — ~12 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/titanic-mardan-palace.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="12000" data-rating="9.1" data-order="7">
+        <!-- 7. Vikingen Infinity Resort — 3 000 + 1 000 = 4 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/vikingen-infinity-resort-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4000" data-hotel="3000" data-flight="1000" data-rating="8.0" data-order="7">
             <div class="hotel-card">
                 <div class="card-number">7</div>
-                <div class="card-badge">LEGEND</div>
-                <img class="hotel-image" src="https://ak-d.tripcdn.com/images/0221k12000isxtoxl6E09.jpg" alt="Titanic Mardan Palace" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏛️</span></div>'">
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/268034803.jpg" alt="Vikingen Infinity Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏊</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Titanic Mardan Palace</h3>
-                    <div class="hotel-location">Белек, Кунду</div>
+                    <h3 class="hotel-name">Vikingen Infinity Resort & Spa</h3>
+                    <div class="hotel-location">Аланья</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI Premium</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Аквариум</span>
-                        <span class="tag">Мега-бассейн</span>
+                        <span class="tag">Бассейны</span>
+                        <span class="tag">Водные горки</span>
                     </div>
-                    <p class="hotel-desc">Легендарный дворцовый отель с гигантским бассейном и подводным аквариумом. Премиальный ультра AI, впечатляющий размах и роскошный пляж.</p>
+                    <p class="hotel-desc">Большой комплекс бассейнов и водных горок прямо на берегу моря. Хорошая анимация, детский клуб, несколько ресторанов. Достойное качество за свою цену.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~12 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~4 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 000 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score gold">9.1</span>
+                            <span class="score">8.0</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -527,30 +595,31 @@
             </div>
         </a>
 
-        <!-- 8. Titanic Deluxe Belek — ~8 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/titanic-deluxe-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="8000" data-rating="8.8" data-order="8">
+        <!-- 8. Orange County Resort Kemer — 3 500 + 1 000 = 4 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/orange-county-resort-kemer.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4500" data-hotel="3500" data-flight="1000" data-rating="8.0" data-order="8">
             <div class="hotel-card">
                 <div class="card-number">8</div>
-                <img class="hotel-image" src="https://image-tc.galaxy.tf/wijpeg-dh4tmoi60giss54s39to2hb2k/004-titanic-deluxe-golf-belek-general-view.jpg" alt="Titanic Deluxe Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🚢</span></div>'">
+                <div class="card-badge orange">FUN</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/355503779.jpg" alt="Orange County Resort Kemer" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎡</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Titanic Deluxe Belek</h3>
-                    <div class="hotel-location">Белек</div>
+                    <h3 class="hotel-name">Orange County Resort Hotel Kemer</h3>
+                    <div class="hotel-location">Кемер</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">8D кино</span>
-                        <span class="tag">Картинг</span>
-                        <span class="tag">Спа</span>
+                        <span class="tag">Голландская деревня</span>
+                        <span class="tag">Аквапарк</span>
                     </div>
-                    <p class="hotel-desc">Отличный Titanic по более доступной цене. Игровой центр с картингом и 8D-кинотеатром, крупнейший спа в регионе. Идеален для подростков!</p>
+                    <p class="hotel-desc">Уникальная концепция — голландская деревня! Яркий дизайн, аквапарк, первая линия на пляже Кемера. Весёлая атмосфера и масса активностей для всей семьи.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~8 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~4 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 500 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score">8.8</span>
+                            <span class="score">8.0</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -559,312 +628,27 @@
             </div>
         </a>
 
-        <!-- 9. Cornelia Diamond — ~8 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/cornelia-diamond-golf-resort-spa.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="8500" data-rating="8.8" data-order="9">
+        <!-- 9. Siam Elegance Hotels & Spa — 3 500 + 1 000 = 4 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/siam-elegance-spa.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4500" data-hotel="3500" data-flight="1000" data-rating="8.4" data-order="9">
             <div class="hotel-card">
                 <div class="card-number">9</div>
-                <img class="hotel-image" src="https://www.corneliaresort.com/uploads/640px/diamond-1.jpg" alt="Cornelia Diamond" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>💠</span></div>'">
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/175252498.jpg" alt="Siam Elegance Hotels & Spa" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏯</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Cornelia Diamond Golf Resort & Spa</h3>
-                    <div class="hotel-location">Белек</div>
+                    <h3 class="hotel-name">Siam Elegance Hotels & Spa</h3>
+                    <div class="hotel-location">Сиде, Богазкент</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Гольф</span>
-                        <span class="tag">Водные горки</span>
+                        <span class="tag">Тайский стиль</span>
+                        <span class="tag">Отличная еда</span>
                     </div>
-                    <p class="hotel-desc">Огромная ухоженная территория, широкий песчаный пляж, водные горки и гольф-поле. Стабильно высокие отзывы от семей — один из самых надёжных выборов.</p>
+                    <p class="hotel-desc">Уникальная тайская тематика! Красивые бассейны, водные горки, спа. Отличная кухня — хвалят все. Первая линия с песчаным пляжем. Атмосферный выбор.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~8 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.8</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 10. Granada Luxury Belek — ~8 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/granada-luxury-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="8000" data-rating="8.7" data-order="10">
-            <div class="hotel-card">
-                <div class="card-number">10</div>
-                <img class="hotel-image" src="https://granada.com.tr/media/ckgnwo1b/granada-belek-anasayfa-banner-2.jpg" alt="Granada Luxury Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌊</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Granada Luxury Belek</h3>
-                    <div class="hotel-location">Белек</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Аквапарк</span>
-                        <span class="tag">Премиум алкоголь</span>
-                    </div>
-                    <p class="hotel-desc">Впечатляющая инфраструктура и масштабная территория. Ультра AI с премиальным импортным алкоголем, аквапарк, множество ресторанов. Современный дизайн.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~8 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.7</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 11. The X Belek — ~9 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/the-x-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="9000" data-rating="8.8" data-order="11">
-            <div class="hotel-card">
-                <div class="card-number">11</div>
-                <div class="card-badge">NEW</div>
-                <img class="hotel-image" src="https://cdn.sanity.io/images/5aifx25p/production/e3b678ce5622800efa586d0ddff1fc22d3cebf9b-5272x2962.jpg" alt="The X Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>✨</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">The X Belek</h3>
-                    <div class="hotel-location">Белек</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">НОВЫЙ</span>
-                        <span class="tag">Семейная зона</span>
-                        <span class="tag">Концерты</span>
-                    </div>
-                    <p class="hotel-desc">Новинка Белека! Отдельные зоны для семей и 16+. Премиальные импортные напитки, концертная площадка с живой музыкой. Стильный современный дизайн.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~9 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.8</span>
-                            <span class="reviews">Новый</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 12. Kaya Belek — ~7 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/kaya-belek.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="7500" data-rating="8.6" data-order="12">
-            <div class="hotel-card">
-                <div class="card-number">12</div>
-                <img class="hotel-image" src="https://kayahotels.com/wp-content/uploads/2025/10/1Calisma-Yuzeyi-100-13.webp" alt="Kaya Belek" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏖️</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Kaya Belek</h3>
-                    <div class="hotel-location">Белек</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Детский клуб</span>
-                        <span class="tag">Аквазона</span>
-                    </div>
-                    <p class="hotel-desc">Уютный семейный отель с хорошим детским клубом и аквазоной. Отличный пляж, зелёная территория. Качество на уровне, цена разумная.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~7 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.6</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 13. Barut Acanthus & Cennet — ~9 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/acanthus-amp-cennet-barut-collection.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="9000" data-rating="9.0" data-order="13">
-            <div class="hotel-card">
-                <div class="card-number">13</div>
-                <img class="hotel-image" src="https://barutacanthuscennet.com/images/og-cover.jpg" alt="Barut Acanthus & Cennet" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌺</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Barut Acanthus & Cennet</h3>
-                    <div class="hotel-location">Сиде, Соргун</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Сеть Barut</span>
-                        <span class="tag">Отличная кухня</span>
-                    </div>
-                    <p class="hotel-desc">Сеть Barut — эталон качества. Первая линия, широкий песчаный пляж в сосновом бору. Великолепная кухня, рестораны a la carte. Спокойная атмосфера.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~9 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">9.0</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 14. Selectum Family Side — ~7 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/silence-beach-resort.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="7000" data-rating="8.7" data-order="14">
-            <div class="hotel-card">
-                <div class="card-number">14</div>
-                <div class="card-badge">NEW</div>
-                <img class="hotel-image" src="https://content.anexapps.com/v1/selectum-hotels/7512ba850d424ef597406eb60de76d82.jpg" alt="Selectum Family Side" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎡</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Selectum Family Side</h3>
-                    <div class="hotel-location">Сиде</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">НОВЫЙ</span>
-                        <span class="tag">Луна-парк</span>
-                        <span class="tag">Водные горки</span>
-                    </div>
-                    <p class="hotel-desc">Новый отель, созданный для семей! Бесплатный луна-парк, новые водные горки, детский клуб, площадка прямо на пляже. Всё свежее и современное.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~7 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.7</span>
-                            <span class="reviews">Новый</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 15. IC Hotels Santai — ~7 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/ic-santai.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="7000" data-rating="8.5" data-order="15">
-            <div class="hotel-card">
-                <div class="card-number">15</div>
-                <div class="card-badge">FAMILY</div>
-                <img class="hotel-image" src="https://santai.ichotels.com.tr/Photos/ic-hotels-santai-family-resort-slide-0010.jpg" alt="IC Hotels Santai" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌴</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">IC Hotels Santai Family Resort</h3>
-                    <div class="hotel-location">Сиде, Кызылагач</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Семейный</span>
-                        <span class="tag">Красивая территория</span>
-                    </div>
-                    <p class="hotel-desc">Уютный семейный отель с красивой зелёной территорией у моря. Детский клуб NICO, аквагорки, мини-зоопарк. Стабильно тёплые отзывы от семей.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~7 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.5</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 16. Rixos Sungate — ~7 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/rixos-sungate.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="7500" data-rating="8.5" data-order="16">
-            <div class="hotel-card">
-                <div class="card-number">16</div>
-                <img class="hotel-image" src="https://www.rixos.com/sites/default/files/2025-08/Rixos_Sungate_General_View_1-min_2.jpg" alt="Rixos Sungate" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏔️</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Rixos Sungate</h3>
-                    <div class="hotel-location">Кемер, Бельдиби</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI 24/7</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Мега-территория</span>
-                        <span class="tag">Аквапарк</span>
-                    </div>
-                    <p class="hotel-desc">Один из крупнейших отелей Европы! Гигантская территория с аквапарком, 6 бассейнов, боулинг, кинотеатр, Rixy Kids Club. Ultra AI 24/7 от Rixos.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~7 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.5</span>
-                            <span class="reviews">Booking</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 17. NG Phaselis Bay — ~10 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/club-phaselis.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="10000" data-rating="8.9" data-order="17">
-            <div class="hotel-card">
-                <div class="card-number">17</div>
-                <div class="card-badge">PREMIUM</div>
-                <img class="hotel-image" src="https://ngphaselisbay.com/media/y2nnhycl/ng-phaselis-bay-slider-2025-1.jpg" alt="NG Phaselis Bay" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌅</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">NG Phaselis Bay</h3>
-                    <div class="hotel-location">Кемер, Гёйнюк</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI 24/7</span>
-                        <span class="tag">Собственный мыс</span>
-                        <span class="tag">Бухты</span>
-                        <span class="tag">Панорамы</span>
-                    </div>
-                    <p class="hotel-desc">На собственном мысе с живописными бухтами! №1 в рейтинге Гёйнюка. 7 ресторанов, 11 баров, водные горки, спа. Уникальная природная локация.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~10 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
-                        </div>
-                        <div class="hotel-rating">
-                            <span class="score">8.9</span>
-                            <span class="reviews">TripAdvisor</span>
-                        </div>
-                    </div>
-                    <span class="click-hint">Открыть на Booking.com →</span>
-                </div>
-            </div>
-        </a>
-
-        <!-- 18. Sailors Beach Club — ~6 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/sailor-s-beach-club.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="6000" data-rating="8.4" data-order="18">
-            <div class="hotel-card">
-                <div class="card-number">18</div>
-                <div class="card-badge">UPDATED</div>
-                <img class="hotel-image" src="https://cdn.sailorsbeachclub.com/CmsListImage/cms_1edacdac-9033-4231-987a-3125bf1d9635.webp" alt="Sailors Beach Club" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>⛵</span></div>'">
-                <div class="card-body">
-                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Sailors Beach Club</h3>
-                    <div class="hotel-location">Кемер, Кириш</div>
-                    <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
-                        <span class="tag">1-я линия</span>
-                        <span class="tag">Обновлён</span>
-                        <span class="tag">Аквапарк</span>
-                    </div>
-                    <p class="hotel-desc">Полностью обновлён в 2020! Аквапарк, детский клуб на пляже, 2 бассейна, итальянский и рыбный рестораны. Лучшая цена в подборке.</p>
-                    <div class="hotel-footer">
-                        <div class="hotel-price">
-                            от <span class="amount">~6 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~4 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 500 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
                             <span class="score">8.4</span>
@@ -876,30 +660,97 @@
             </div>
         </a>
 
-        <!-- 19. Delphin Imperial — ~8 000 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/delphin-imperial.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="8000" data-rating="9.0" data-order="19">
+        <!-- 10. Limak Limra Hotel & Resort — 3 500 + 1 000 = 4 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/limak-limra-resort.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4500" data-hotel="3500" data-flight="1000" data-rating="8.1" data-order="10">
             <div class="hotel-card">
-                <div class="card-number">19</div>
-                <img class="hotel-image" src="https://photos.hotelbeds.com/giata/xl/15/157274/157274a_hb_a_023.jpg" alt="Delphin Imperial" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🐬</span></div>'">
+                <div class="card-number">10</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/502543050.jpg" alt="Limak Limra" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏊</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Delphin Imperial</h3>
+                    <h3 class="hotel-name">Limak Limra Hotel & Resort</h3>
+                    <div class="hotel-location">Кемер, Кириш</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Огромная территория</span>
+                        <span class="tag">Олимпийский бассейн</span>
+                    </div>
+                    <p class="hotel-desc">Легендарный семейный отель Кемера. Гигантская территория, олимпийский бассейн, аквапарк, детский клуб. Проверенная временем классика с отличной репутацией.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~4 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 500 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.1</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 11. Kirman Leodikya Resort — 3 500 + 1 000 = 4 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/kirman-leodikya-resort.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="4500" data-hotel="3500" data-flight="1000" data-rating="8.3" data-order="11">
+            <div class="hotel-card">
+                <div class="card-number">11</div>
+                <div class="card-badge">ULTRA AI</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/538445618.jpg" alt="Kirman Leodikya Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>✨</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Kirman Leodikya Resort</h3>
+                    <div class="hotel-location">Аланья, Окурджалар</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">Ultra All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Современный</span>
+                        <span class="tag">Аквапарк</span>
+                        <span class="tag">Спа</span>
+                    </div>
+                    <p class="hotel-desc">Современный дизайн-отель с Ultra AI — импортный алкоголь и 24/7 питание по доступной цене! Аквапарк, спа, детский клуб. Отличные отзывы семей.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~4 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~3 500 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.3</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 12. Royal Holiday Palace — 4 000 + 1 000 = 5 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/royal-holiday-palace.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5000" data-hotel="4000" data-flight="1000" data-rating="8.0" data-order="12">
+            <div class="hotel-card">
+                <div class="card-number">12</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/477497938.jpg" alt="Royal Holiday Palace" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🎳</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Royal Holiday Palace</h3>
                     <div class="hotel-location">Анталья, Лара</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
                         <span class="tag">Аквапарк</span>
-                        <span class="tag">Анимация</span>
-                        <span class="tag">20 мин от аэропорта</span>
+                        <span class="tag">Боулинг</span>
+                        <span class="tag">15 мин от аэропорта</span>
                     </div>
-                    <p class="hotel-desc">Первая линия на песчаном пляже Лара. 798 номеров, 11 ресторанов a la carte, аквапарк, боулинг. Всего 20 мин от аэропорта — минимум трансфера!</p>
+                    <p class="hotel-desc">Популярный семейный отель на пляже Лара. Большая территория, аквапарк, боулинг, детский клуб. Всего 15 минут от аэропорта — удобный трансфер!</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~8 000 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~5 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 000 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score">9.0</span>
+                            <span class="score">8.0</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -908,30 +759,262 @@
             </div>
         </a>
 
-        <!-- 20. Lara Barut Collection — ~10 500 CHF -->
-        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/lara-barut-collection.html?checkin=2026-07-20&checkout=2026-07-31&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="10500" data-rating="9.2" data-order="20">
+        <!-- 13. Miracle Resort Hotel — 4 000 + 1 000 = 5 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/miracle-resort.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5000" data-hotel="4000" data-flight="1000" data-rating="8.2" data-order="13">
             <div class="hotel-card">
-                <div class="card-number">20</div>
-                <div class="card-badge">TOP</div>
-                <img class="hotel-image" src="https://barutlara.com/images/og-cover.jpg" alt="Lara Barut Collection" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🥇</span></div>'">
+                <div class="card-number">13</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/508437398.jpg" alt="Miracle Resort Hotel" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌟</span></div>'">
                 <div class="card-body">
                     <div class="hotel-stars">★ ★ ★ ★ ★</div>
-                    <h3 class="hotel-name">Lara Barut Collection</h3>
+                    <h3 class="hotel-name">Miracle Resort Hotel</h3>
                     <div class="hotel-location">Анталья, Лара</div>
                     <div class="hotel-tags">
-                        <span class="tag highlight">Ultra AI Premium</span>
+                        <span class="tag highlight">All Inclusive</span>
                         <span class="tag">1-я линия</span>
-                        <span class="tag">Сеть Barut</span>
-                        <span class="tag">Импортный алкоголь</span>
+                        <span class="tag">Песчаный пляж</span>
+                        <span class="tag">Водные горки</span>
+                        <span class="tag">Анимация</span>
                     </div>
-                    <p class="hotel-desc">Флагман сети Barut. Песчаный пляж Лара, полный набор импортного алкоголя, 6 ресторанов a la carte, высочайшая кухня. Один из лучших отелей Турции.</p>
+                    <p class="hotel-desc">Первая линия на знаменитом песчаном пляже Лара. Впечатляющий бассейн с горками, качественная анимация, хорошая кухня. Стабильно высокие отзывы.</p>
                     <div class="hotel-footer">
                         <div class="hotel-price">
-                            от <span class="amount">~10 500 CHF</span>
-                            <span class="per">10 ночей · 2 взр + реб</span>
+                            ИТОГО <span class="amount">~5 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 000 + перелёт ~1 000</div>
                         </div>
                         <div class="hotel-rating">
-                            <span class="score gold">9.2</span>
+                            <span class="score">8.2</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 14. Trendy Lara — 4 000 + 1 000 = 5 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/trendy-lara.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5000" data-hotel="4000" data-flight="1000" data-rating="8.1" data-order="14">
+            <div class="hotel-card">
+                <div class="card-number">14</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/556262408.jpg" alt="Trendy Lara" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌴</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Trendy Lara Hotel</h3>
+                    <div class="hotel-location">Анталья, Лара</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Большой бассейн</span>
+                        <span class="tag">Детский клуб</span>
+                    </div>
+                    <p class="hotel-desc">Ухоженный семейный отель на пляже Лара. Большой бассейн, детский клуб, несколько ресторанов. Хорошо поддерживается и регулярно обновляется.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~5 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 000 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.1</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 15. Royal Seginus — 4 500 + 1 000 = 5 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/royal-seginus.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5500" data-hotel="4500" data-flight="1000" data-rating="8.3" data-order="15">
+            <div class="hotel-card">
+                <div class="card-number">15</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/478478048.jpg" alt="Royal Seginus" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>👑</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Royal Seginus Hotel</h3>
+                    <div class="hotel-location">Анталья, Лара</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Просторные номера</span>
+                        <span class="tag">Спа</span>
+                    </div>
+                    <p class="hotel-desc">Первая линия на Лара-бич, просторные номера, множество ресторанов, спа. Горки у бассейна, хорошие подростковые активности. Популярен у семей.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~5 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 500 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.3</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 16. Asteria Kremlin Palace — 4 500 + 1 000 = 5 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/asteria-kremlin-palace.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5500" data-hotel="4500" data-flight="1000" data-rating="8.3" data-order="16">
+            <div class="hotel-card">
+                <div class="card-number">16</div>
+                <div class="card-badge orange">THEMED</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/570866696.jpg" alt="Asteria Kremlin Palace" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🏰</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Asteria Kremlin Palace</h3>
+                    <div class="hotel-location">Анталья, Лара / Кунду</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Кремль-тема</span>
+                        <span class="tag">Аквапарк</span>
+                        <span class="tag">Анимация</span>
+                    </div>
+                    <p class="hotel-desc">Впечатляющая архитектура в стиле Кремля! Большой аквапарк, детский клуб, вечерние шоу. Первая линия на пляже Лара. Подростку будет интересно.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~5 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 500 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.3</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 17. Rixos Downtown Antalya — 4 500 + 1 000 = 5 500 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/rixos-downtown-antalya.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="5500" data-hotel="4500" data-flight="1000" data-rating="8.6" data-order="17">
+            <div class="hotel-card">
+                <div class="card-number">17</div>
+                <div class="card-badge">RIXOS</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/549974076.jpg" alt="Rixos Downtown Antalya" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌆</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Rixos Downtown Antalya</h3>
+                    <div class="hotel-location">Анталья, центр</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">Ultra All Inclusive</span>
+                        <span class="tag">Бренд Rixos</span>
+                        <span class="tag">Городской пляж</span>
+                        <span class="tag">Город рядом</span>
+                    </div>
+                    <p class="hotel-desc">Качество Rixos по доступной цене! Ultra AI, свой пляж в черте города, близко к достопримечательностям Антальи. Можно совместить пляж и прогулки по городу.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~5 500 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~4 500 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.6</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 18. Barut Hemera — 5 000 + 1 000 = 6 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/barut-hemera.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="6000" data-hotel="5000" data-flight="1000" data-rating="8.7" data-order="18">
+            <div class="hotel-card">
+                <div class="card-number">18</div>
+                <div class="card-badge">BARUT</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/255979498.jpg" alt="Barut Hemera" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🌺</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Barut Hemera</h3>
+                    <div class="hotel-location">Сиде</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Сеть Barut</span>
+                        <span class="tag">Отличная кухня</span>
+                    </div>
+                    <p class="hotel-desc">Сеть Barut славится качеством. Первая линия, ухоженный пляж, отличная кухня с ресторанами a la carte. Более доступная альтернатива Barut Acanthus.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~6 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~5 000 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.7</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 19. Delphin BE Grand Resort — 5 000 + 1 000 = 6 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/delphin-be-grand-resort.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="6000" data-hotel="5000" data-flight="1000" data-rating="8.5" data-order="19">
+            <div class="hotel-card">
+                <div class="card-number">19</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/264483498.jpg" alt="Delphin BE Grand Resort" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>🐬</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Delphin BE Grand Resort</h3>
+                    <div class="hotel-location">Анталья, Лара</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Сеть Delphin</span>
+                        <span class="tag">Водные горки</span>
+                        <span class="tag">Анимация</span>
+                    </div>
+                    <p class="hotel-desc">Качество сети Delphin по умеренной цене. Первая линия на Лара-бич, большой бассейн с горками, детский клуб, яркая анимация. 15 мин от аэропорта.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~6 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~5 000 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.5</span>
+                            <span class="reviews">Booking</span>
+                        </div>
+                    </div>
+                    <span class="click-hint">Открыть на Booking.com →</span>
+                </div>
+            </div>
+        </a>
+
+        <!-- 20. Delphin Diva Premiere — 5 000 + 1 000 = 6 000 CHF -->
+        <a class="hotel-card-link" href="https://www.booking.com/hotel/tr/delphin-diva.html?checkin=2026-07-20&checkout=2026-07-30&group_adults=2&group_children=1&age=14&no_rooms=1" target="_blank" rel="noopener" data-price="6000" data-hotel="5000" data-flight="1000" data-rating="8.6" data-order="20">
+            <div class="hotel-card">
+                <div class="card-number">20</div>
+                <img class="hotel-image" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/569434778.jpg" alt="Delphin Diva Premiere" loading="lazy" onerror="this.outerHTML='<div class=\'hotel-image-placeholder\'><span class=\'emoji\'>💃</span></div>'">
+                <div class="card-body">
+                    <div class="hotel-stars">★ ★ ★ ★ ★</div>
+                    <h3 class="hotel-name">Delphin Diva Premiere</h3>
+                    <div class="hotel-location">Анталья, Лара</div>
+                    <div class="hotel-tags">
+                        <span class="tag highlight">All Inclusive</span>
+                        <span class="tag">1-я линия</span>
+                        <span class="tag">Сеть Delphin</span>
+                        <span class="tag">Аквапарк</span>
+                        <span class="tag">Боулинг</span>
+                        <span class="tag">Кинотеатр</span>
+                    </div>
+                    <p class="hotel-desc">Топовый отель сети Delphin по разумной цене. Аквапарк, боулинг, кинотеатр, детский клуб. Первая линия, отличный пляж Лара. Высокие оценки за сервис.</p>
+                    <div class="hotel-footer">
+                        <div class="hotel-price">
+                            ИТОГО <span class="amount">~6 000 CHF</span>
+                            <span class="per">10 ночей · 2 взр + реб + перелёт</span>
+                            <div class="breakdown">отель ~5 000 + перелёт ~1 000</div>
+                        </div>
+                        <div class="hotel-rating">
+                            <span class="score">8.6</span>
                             <span class="reviews">Booking</span>
                         </div>
                     </div>
@@ -942,39 +1025,31 @@
 
     </div>
 
-    <div class="disclaimer">
-        <p>* Цены в CHF ориентировочные, откалиброваны по реальным ценам Booking.com на июль–август 2026.</p>
-        <p>За 10 ночей, 2 взрослых + ребёнок 14 лет, All Inclusive. Клик по карточке открывает отель на Booking.com с вашими датами.</p>
-        <p>Диапазон: от ~6 000 CHF (Sailors Beach) до ~15 500 CHF (Maxx Royal)</p>
-        <p style="margin-top: 10px;">Составлено: март 2026</p>
+    <div class="footer-note">
+        Цены ориентировочные на лето 2026 (10 ночей, 2 взрослых + ребёнок 14 лет).<br>
+        Перелёт: ~1 000 CHF (SunExpress, прямой Цюрих → Анталья, 3 чел., туда-обратно).<br>
+        Актуальные цены уточняйте на <a href="https://www.booking.com" target="_blank" style="color:#80d8ff;">Booking.com</a>,
+        <a href="https://www.google.com/travel/flights" target="_blank" style="color:#80d8ff;">Google Flights</a>,
+        <a href="https://www.skyscanner.ch" target="_blank" style="color:#80d8ff;">Skyscanner</a>.
+        Бронируйте заранее для лучших цен!
     </div>
 
-</div>
-
-<script>
-function sortHotels(mode, btn) {
-    const grid = document.getElementById('hotelsGrid');
-    const cards = Array.from(grid.children);
-    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    cards.sort((a, b) => {
-        switch(mode) {
-            case 'price-asc':
-                return parseInt(a.dataset.price) - parseInt(b.dataset.price);
-            case 'price-desc':
-                return parseInt(b.dataset.price) - parseInt(a.dataset.price);
-            case 'rating':
-                return parseFloat(b.dataset.rating) - parseFloat(a.dataset.rating);
-            default:
-                return parseInt(a.dataset.order) - parseInt(b.dataset.order);
+    <script>
+        function sortHotels(type, btn) {
+            document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const grid = document.getElementById('hotelsGrid');
+            const cards = [...grid.querySelectorAll('.hotel-card-link')];
+            cards.sort((a, b) => {
+                if (type === 'price-asc') return +a.dataset.price - +b.dataset.price;
+                if (type === 'price-desc') return +b.dataset.price - +a.dataset.price;
+                if (type === 'rating') return +b.dataset.rating - +a.dataset.rating;
+            });
+            cards.forEach((card, i) => {
+                card.querySelector('.card-number').textContent = i + 1;
+                grid.appendChild(card);
+            });
         }
-    });
-    cards.forEach((card, i) => {
-        card.querySelector('.card-number').textContent = i + 1;
-        grid.appendChild(card);
-    });
-}
-</script>
-
+    </script>
 </body>
 </html>
